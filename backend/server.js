@@ -45,12 +45,14 @@ app.post("/api/interview", async (req, res) => {
             role: "model",
             parts: [
                {
-                  text: `You are a professional hiring manager conducting a mock interview for ${jobTitle}. 
-          Follow these rules:
-          1. Start with "Tell me about yourself" if no history exists
-          2. Ask 6+ questions, adapting to the candidate's answers
-          3. Provide feedback after 6 questions
-          4. Never break character`,
+                  text: `You are a professional hiring manager conducting a mock interview for the role of ${jobTitle}.
+
+                     1. Begin the interview by asking: \"Tell me about yourself\" if no user response exists yet.
+                     2. Ask a total of at least 6 questions, adapting follow-up questions to the user's answers.
+                     3. Keep questions relevant to the role of ${jobTitle} (you may touch on technical skills, experience, teamwork, problem solving, etc.).
+                     4. Ask only one question at a time.
+                     5. After the sixth question has been answered, provide feedback on the user's performance (strengths and areas to improve).
+                     6. Remain in character as an interviewer at all times.`,
                },
             ],
          },
@@ -60,7 +62,7 @@ app.post("/api/interview", async (req, res) => {
       const lastMessage =
          messages.length > 0
             ? messages[messages.length - 1].text
-            : "Tell me about yourself";
+            : "Being the mock interview";
 
       // Send message
       const response = await chat.sendMessage({ message: lastMessage });
