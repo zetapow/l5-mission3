@@ -8,24 +8,29 @@ body, html, #root {
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
+  align-items: center;        
+  justify-content: center;    
+  min-height: 100vh;          
+  padding: 2rem;
   box-sizing: border-box;
+  gap: 1.5rem;                
 }
 
 .input-row {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   width: 100%;
-  margin-top: 10px;
-  gap: 10px;
+  max-width: 600px;
 }
 
 .reply-input {
   flex: 1;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  resize: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 450px;
+  resize: vertical;
 }
