@@ -46,7 +46,7 @@ app.post("/api/interview", async (req, res) => {
 
       // Prepare chat history for Gemini API
       const history = messages.map((message) => ({
-         role: message.sender === "user" ? "user" : "assistant",
+         role: message.sender === "user" ? "user" : "model",
          parts: [{ text: message.text }],
       }));
 
