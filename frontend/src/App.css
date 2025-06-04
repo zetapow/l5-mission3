@@ -1,13 +1,31 @@
-/* Reset CSS */
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
 }
 
-/* #root {
-   max-width: 1280px;
-   margin: 0 auto;
-   padding: 2rem;
-   text-align: center;
-} */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.input-row {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.reply-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: none;
+}
