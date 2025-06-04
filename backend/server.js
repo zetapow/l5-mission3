@@ -60,7 +60,7 @@ app.post("/api/interview", async (req, res) => {
       const lastMessage =
          messages.length > 0
             ? messages[messages.length - 1].text
-            : "Tell me about yourself";
+            : "Being the mock interview";
 
       // Send message
       const response = await chat.sendMessage({ message: lastMessage });
