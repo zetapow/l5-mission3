@@ -5,7 +5,8 @@ import JobTitleInput from "./components/JobTitleInput/JobTitleInput";
 import ChatWindow from "./components/ChatWindow/ChatWindow";
 import SubmitButton from "./components/Submit Button/SubmitButton";
 
-import sendInterviewApi from "./apis/InterviewApi";
+// import sendInterviewApi from "./apis/InterviewApi";
+import sendInterviewApi from "./apis/sendInterviewApi";
 
 function App() {
    const [jobTitle, setJobTitle] = useState("");
