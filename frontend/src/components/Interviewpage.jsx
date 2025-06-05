@@ -3,6 +3,7 @@ import ChatWindow from '../../components/ChatWindow/ChatWindow';
 import JobTitleInput from '../../components/JobTitleInput/JobTitleInput';
 import SubmitButton from '../../components/Submit Button/SubmitButton';
 import sendInterviewApi from '../apis/interviewApi'; 
+import './InterviewPage.css';
 
 const InterviewPage = () => {
   const [jobTitle, setJobTitle] = useState('');
@@ -28,7 +29,7 @@ const InterviewPage = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div className="app-container">
       {!chatHistory.length ? (
         <JobTitleInput
           jobTitle={jobTitle}
@@ -38,14 +39,16 @@ const InterviewPage = () => {
       ) : (
         <>
           <ChatWindow chatHistory={chatHistory} />
-          <textarea
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            rows={3}
-            placeholder="Your answer..."
-            style={{ width: '100%', padding: '10px', borderRadius: '6px' }}
-          />
-          <SubmitButton onClick={handleSubmitAnswer} disabled={!userInput.trim()} />
+          <div className="input-row">
+            <textarea
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              rows={3}
+              placeholder="Your answer..."
+              className="reply-input"
+            />
+            <SubmitButton onClick={handleSubmitAnswer} disabled={!userInput.trim()} />
+          </div>
         </>
       )}
     </div>
